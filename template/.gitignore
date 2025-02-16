@@ -1,0 +1,35 @@
+# Laravel
+/vendor/
+/node_modules/
+/storage/*
+/public/hot
+/public/storage
+/.env
+/.idea
+/.vscode
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# React
+/build/
+/dist/
+
+# IDE
+*.swp
+.idea/
+.vscode/
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# npm logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Composer logs
+composer.phar
+composer.lock
