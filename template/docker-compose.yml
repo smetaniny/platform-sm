@@ -4,7 +4,7 @@ services:
       context: ./packages/laravel
       dockerfile: Dockerfile
       args:
-        WWWGROUP: '${WWWGROUP:-1000}'
+        WWWGROUP: "${WWWGROUP:-1000}"
     image: sail-8.4/app
     container_name: ${PROJECT_NAME}-laravel
     restart: unless-stopped
@@ -20,6 +20,8 @@ services:
 
   pgsql:
     image: postgres:17
+    ports:
+      - "5432:5432"
     container_name: ${PROJECT_NAME}-pgsql
     restart: unless-stopped
     environment:
