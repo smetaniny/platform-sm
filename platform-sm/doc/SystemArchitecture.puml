@@ -1,0 +1,62 @@
+@startuml
+' Определяем основные компоненты системы
+
+' Пользователь и клиенты
+class "Пользователь" as User
+class "Веб-приложение (React)" as WebApp
+class "Мобильное приложение (React Native)" as MobileApp
+class "Панель администратора (React Admin)" as AdminApp
+
+' Отдельная сущность: REST API (Laravel)
+rectangle "REST API (Laravel)" {
+    class "REST API (Laravel)" as LaravelApp
+}
+
+' Отдельная сущность: GraphQL API (Node.js)
+rectangle "GraphQL API (Node.js)" {
+    class "GraphQL API (Node.js)" as GraphQLAPI
+}
+
+' Отдельная сущность: WebSocket сервер
+rectangle "Сервер реального времени (Node.js)" {
+    class "WebSocket сервер (Node.js)" as WS
+}
+
+' Слой базы данных
+rectangle "Слой базы данных" {
+    class "База данных (PostgreSQL)" as DB
+    class "Redis" as RedisLayer
+}
+
+' Взаимодействие пользователей с клиентами
+User --> WebApp : "Взаимодействует с"
+User --> MobileApp : "Взаимодействует с"
+User --> AdminApp : "Взаимодействует с"
+
+' Клиенты запрашивают данные через GraphQL API
+WebApp --> GraphQLAPI : "Запрашивает данные (кастомный токен)"
+MobileApp --> GraphQLAPI : "Запрашивает данные (кастомный токен)"
+
+' Панель администратора запрашивает данные через REST API
+AdminApp --> LaravelApp : "Запрашивает данные (кастомный токен)"
+
+' Клиенты получают уведомления через WebSocket сервер
+WebApp <-- WS : "Получает уведомления"
+MobileApp <-- WS : "Получает уведомления"
+AdminApp <-- WS : "Получает уведомления"
+
+' WebSocket сервер получает события от Laravel
+WS --> LaravelApp : "Обрабатывает события"
+LaravelApp --> WS : "Отправляет события"
+
+' GraphQL API получает данные напрямую из базы данных PostgreSQL
+GraphQLAPI --> DB : "Чтение/Запись данных"
+
+' Laravel работает с базой данных и Redis
+LaravelApp --> DB : "Чтение/Запись данных"
+LaravelApp --> RedisLayer : "Кеширование и очереди"
+
+' Redis используется для кеширования и управления очередями
+GraphQLAPI --> RedisLayer : "Кеширование и очереди"
+
+@enduml
