@@ -1,9 +1,5 @@
-# Laravel
 /vendor/
 /node_modules/
-/storage/*
-/public/hot
-/public/storage
 /.env
 /.idea
 /.vscode
@@ -12,17 +8,6 @@
 .docker/
 docker-compose.override.yml
 
-# React
-/build/
-/dist/
-
-# React Native
-**/android/app/build/
-**/ios/build/
-*.apk
-*.aab
-*.ipa
-*.so
 
 # IDE
 *.swp
