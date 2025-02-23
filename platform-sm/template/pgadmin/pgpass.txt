@@ -1,1 +1,0 @@
-pgsql:5432:laravel:sail:password

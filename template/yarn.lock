@@ -6715,7 +6715,7 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-lerna@^8.1.9:
+lerna@^8.1.9, lerna@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/lerna/-/lerna-8.2.0.tgz#ec2bd57745f3176b0e32ed15d16d1d9d909cebc2"
   integrity sha512-SLXPPUqU1V6m8pGVNYp8CpqGX92U2fp6XFWQsQMY36VTCGVP/5dGtri4hd2sgk2hcBuFPnxycgEnJecT2MQUsg==

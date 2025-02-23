@@ -64,11 +64,11 @@ platform-sm/
 │── template/              # Шаблон проекта для быстрого старта
 │── packages/
 │  ├── laravel/            # Backend на Laravel (бизнес-логика, очереди)
-│  ├── reactApp/           # Frontend на React
-│  ├── reactAdmin/         # Панель администратора на React
-│  ├── reactNative/        # Мобильные приложения React Native
+│  ├── react-app/           # Frontend на React
+│  ├── react-admin/         # Панель администратора на React
+│  ├── react-native/        # Мобильные приложения React Native
 │  ├── websocket/          # Сервер WebSocket для реального времени (Node.js)
-│  ├── graphqlApi/         # GraphQL API на Node.js (Apollo, Hasura и т.д.)
+│  ├── graphql-api/         # GraphQL API на Node.js (Apollo, Hasura и т.д.)
 │  ├── shared/             # Общий код для всех платформ
 │  │  ├──hocs/             # Higher-Order Components (HOC)
 │  │  ├── hooks/           # Кастомные хуки
