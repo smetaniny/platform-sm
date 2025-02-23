@@ -16,6 +16,14 @@ docker-compose.override.yml
 /build/
 /dist/
 
+# React Native
+**/android/app/build/
+**/ios/build/
+*.apk
+*.aab
+*.ipa
+*.so
+
 # IDE
 *.swp
 .idea/
@@ -33,3 +41,30 @@ yarn-error.log
 # Composer logs
 composer.phar
 composer.lock
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# Bundle artifact
+*.jsbundle
+
+# Ruby / CocoaPods
+**/Pods/
+/vendor/bundle/
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+
+# Testing
+/coverage
